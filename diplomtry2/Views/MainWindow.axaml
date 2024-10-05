@@ -1,0 +1,1235 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="https://github.com/avaloniaui/development"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:diplomtry2.ViewModels"
+        xmlns:views="clr-namespace:diplomtry2.Views"
+        mc:Ignorable="d"	
+		MaxHeight="600"
+		MaxWidth="1495"
+		MinHeight="600"
+		Background="#f0f0f0"
+		MinWidth="1495"
+        x:Class="diplomtry2.Views.MainWindow"
+        Icon="avares://diplomtry2/Assets/logo.ico"
+        Title="Лабораторная работа Виброакустика">
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="Background" Value="#6a6a6a"/>
+			<Setter Property="Foreground" Value="White"/>			
+		</Style>
+		<Style Selector="TextBlock">
+			<Setter Property="Foreground" Value="Black"></Setter>
+		</Style>
+		<Style Selector="ComboBox">
+			<Setter Property="Foreground" Value="White"/>
+		</Style>
+		
+	</Window.Styles>
+	<Grid ColumnDefinitions="*">
+		<StackPanel Orientation="Horizontal">
+			<StackPanel Width="100">
+				<Button x:Name="SelectFirstTab" Background="#4CAF50" Foreground="White" Margin="60,10,10,10" Height="40" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Content="Стена 1" Click="TabButton1_Click"/>
+				<Button x:Name="SelectSecondTab" Margin="60,10,10,10" Height="40" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Стена 2" Click="TabButton2_Click"/>
+				<Button x:Name="SelectThirdTab" Margin="60,10,10,10" Height="40" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Стена 3" Click="TabButton3_Click"/>
+				<Button x:Name="SelectFourthTab" Margin="60,10,10,10" Height="40" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Стена 4" Click="TabButton4_Click"/>
+				<Button x:Name="SelectFifthTab" Margin="60,10,10,10" Height="40" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Расчёт стены 1" Click="TabButton5_Click" VerticalAlignment="Bottom"/>
+				<Button x:Name="SelectSixthTab" Margin="60,10,10,10" Height="40" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Расчёт стены 2" Click="TabButton6_Click" VerticalAlignment="Bottom"/>
+				<Button x:Name="SelectSeventhTab" Margin="60,10,10,10" Height="40" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Расчёт стены 3" Click="TabButton7_Click" VerticalAlignment="Bottom"/>
+				<Button x:Name="SelectEightTab" Margin="60,10,10,10" Height="40" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Расчёт стены 4" Click="TabButton8_Click" VerticalAlignment="Bottom"/>
+				<Button x:Name="SelectNinthTab" Margin="60,10,10,10" Height="40" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Общий расчёт" Click="TabButton9_Click" VerticalAlignment="Bottom"/>
+				<Button x:Name="SelectHelpTab" Margin="60,10,10,10" Height="40" Width="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Помощь" Click="TabButton10_Click" VerticalAlignment="Bottom"/>
+			</StackPanel>
+			<TabControl Name="tabControl" Width="1300" MaxWidth="1300" Margin="100,0,10,10">
+				<TabItem Header="Первая стена" IsVisible="False">
+					<StackPanel Margin="10">
+						<Grid ColumnDefinitions="0.55*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*">
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FirstWallImage" Source="avares://diplomtry2/Images/первая стена.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FirstWallImageODR" IsVisible="False" Source="avares://diplomtry2/Images/первая стена О-Д-Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FirstWallImageO" IsVisible="False" Source="avares://diplomtry2/Images/первая стена О----.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FirstWallImageD" IsVisible="False" Source="avares://diplomtry2/Images/первая стена --Д--.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FirstWallImageR" IsVisible="False" Source="avares://diplomtry2/Images/первая стена ----Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FirstWallImageOD" IsVisible="False" Source="avares://diplomtry2/Images/первая стена О-Д--.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FirstWallImageOR" IsVisible="False" Source="avares://diplomtry2/Images/первая стена О---Р.png" Width="200" Height="200" Margin="70,70,0,00"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FirstWallImageDR" IsVisible="False" Source="avares://diplomtry2/Images/первая стена --Д-Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<TextBlock Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Left" Text="Предельный спектр:" Margin="0,5,10,5"/>
+							<ComboBox Foreground="White" Grid.Column="1"  Grid.Row="3" HorizontalAlignment="Left" Margin="0,5" x:Name="comboBox_FirstSpeechLevel" Width="100" SelectedIndex="0" IsVisible="True">
+								<ComboBoxItem Content="ПС-20"/>
+								<ComboBoxItem Content="ПС-25"/>
+								<ComboBoxItem Content="ПС-30"/>	
+								<ComboBoxItem Content="ПС-35"/>
+								<ComboBoxItem Content="ПС-40"/>
+								<ComboBoxItem Content="ПС-45"/>
+								<ComboBoxItem Content="ПС-50"/>
+								<ComboBoxItem Content="ПС-55"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Text="Длина стены, м:" Margin="0,5"/>
+							<TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" x:Name="FirstWallLenght" Text="2" TextChanging="FirstWallLenght_TextChanged" Margin="0,5" Width="100"/>
+							<TextBlock Grid.Column="2" Grid.Row="0"  HorizontalAlignment="Left" Text="Громкость источника звука, Дб:" Margin="-70,5,0,5"/>
+							<TextBox Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" x:Name="FirstWallVolume" Text="50" Margin="-100,5,0,5" Width="100"/>
+							<TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Text="Высота стены, м:" Margin="0,5"/>
+							<TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" x:Name="FirstWallHeight" Text="3" TextChanging="FirstWallHeight_TextChanged" Margin="0,5" Width="100"/>
+							<TextBlock Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Text="Величина звукоизоляции, Дб:" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="15,45,0,0"/>
+							<TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Text="Относительная площадь:" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="-370,45,0,5"/>
+							<TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Text="" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="48,45,0,0"/>
+							<TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Text="Материал стены:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" x:Name="FirstWallMaterial_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" x:Name="FirstWallMaterial_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<TextBlock Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Text=""  TextAlignment="Center" Width="110" Margin="-80,55,0,0" TextWrapping="Wrap" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="4" HorizontalAlignment="Left"  x:Name="comboBox_FirstWallMaterial" SelectionChanged="comboBox_FirstWallMaterial_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="4" HorizontalAlignment="Left"  x:Name="comboBox_FirstWallMaterial_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+
+							<TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Text="Смежная батаерея:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" x:Name="FirstWallRadiator_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="5" HorizontalAlignment="Left" x:Name="FirstWallRadiator_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_FirstWallRadiator" SelectionChanged="comboBox_FirstWallRadiator_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_FirstWallRadiator_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Text="Окно:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left" x:Name="FirstWallWindow_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="6" HorizontalAlignment="Left" x:Name="FirstWallWindow_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="6" x:Name="comboBox_FirstWallWindow" SelectionChanged="comboBox_FirstWallWindow_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_FirstWallWindow_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" Text="Дверь:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="7" HorizontalAlignment="Left" x:Name="FirstWallDoor_par1" Margin="20,5" Height="20" Width="100" VerticalAlignment="Top"/>
+							<TextBox Grid.Column="3" Grid.Row="7" HorizontalAlignment="Left" x:Name="FirstWallDoor_par2" Margin="-100,5,0,5" Height="20" Width="100" VerticalAlignment="Top"/>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="7" x:Name="comboBox_FirstWallDoor" SelectionChanged="comboBox_FirstWallDoor_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_FirstWallDoor_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+						</Grid>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Вторая стена" IsVisible="False">
+					<StackPanel Margin="10">
+						<Grid ColumnDefinitions="0.55*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*">
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="SecondWallImage" Source="avares://diplomtry2/Images/вторая стена.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="SecondWallImageODR" IsVisible="False" Source="avares://diplomtry2/Images/вторая стена О-Д-Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="SecondWallImageO" IsVisible="False" Source="avares://diplomtry2/Images/вторая стена О----.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="SecondWallImageD" IsVisible="False" Source="avares://diplomtry2/Images/вторая стена --Д--.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="SecondWallImageR" IsVisible="False" Source="avares://diplomtry2/Images/вторая стена ----Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="SecondWallImageOD" IsVisible="False" Source="avares://diplomtry2/Images/вторая стена О-Д--.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="SecondWallImageOR" IsVisible="False" Source="avares://diplomtry2/Images/вторая стена О---Р.png" Width="200" Height="200" Margin="70,70,0,00"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="SecondWallImageDR" IsVisible="False" Source="avares://diplomtry2/Images/вторая стена --Д-Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<TextBlock Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Left" Text="Предельный спектр:" Margin="0,5,10,5"/>
+							<ComboBox Foreground="White" Grid.Column="1"  Grid.Row="3" HorizontalAlignment="Left" Margin="0,5" x:Name="comboBox_SecondSpeechLevel" Width="100" SelectedIndex="0" IsVisible="True">
+								<ComboBoxItem Content="ПС-20"/>
+								<ComboBoxItem Content="ПС-25"/>
+								<ComboBoxItem Content="ПС-30"/>
+								<ComboBoxItem Content="ПС-35"/>
+								<ComboBoxItem Content="ПС-40"/>
+								<ComboBoxItem Content="ПС-45"/>
+								<ComboBoxItem Content="ПС-50"/>
+								<ComboBoxItem Content="ПС-55"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Text="Длина стены, м:" Margin="0,5"/>
+							<TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" x:Name="SecondWallLenght" Text="2" TextChanging="SecondWallLenght_TextChanged" Margin="0,5" Width="100"/>
+							<TextBlock Grid.Column="2" Grid.Row="0"  HorizontalAlignment="Left" Text="Громкость источника звука, Дб:" Margin="-70,5,0,5"/>
+							<TextBox Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" x:Name="SecondWallVolume" Text="50" Margin="-100,5,0,5" Width="100"/>
+							<TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Text="Высота стены, м:" Margin="0,5"/>
+							<TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" x:Name="SecondWallHeight" Text="3" TextChanging="SecondWallHeight_TextChanged" Margin="0,5" Width="100"/>
+							<TextBlock Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Text="Величина звукоизоляции, Дб:" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="15,45,0,0"/>
+							<TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Text="Относительная площадь:" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="-370,45,0,5"/>
+							<TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Text="" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="48,45,0,0"/>
+							<TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Text="Материал стены:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" x:Name="SecondWallMaterial_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" x:Name="SecondWallMaterial_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<TextBlock Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Text=""  TextAlignment="Center" Width="110" Margin="-80,55,0,0" TextWrapping="Wrap" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="4" HorizontalAlignment="Left"  x:Name="comboBox_SecondWallMaterial" SelectionChanged="comboBox_SecondWallMaterial_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="4" HorizontalAlignment="Left"  x:Name="comboBox_SecondWallMaterial_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+
+							<TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Text="Смежная батаерея:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" x:Name="SecondWallRadiator_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="5" HorizontalAlignment="Left" x:Name="SecondWallRadiator_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_SecondWallRadiator" SelectionChanged="comboBox_SecondWallRadiator_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_SecondWallRadiator_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Text="Окно:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left" x:Name="SecondWallWindow_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="6" HorizontalAlignment="Left" x:Name="SecondWallWindow_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="6" x:Name="comboBox_SecondWallWindow" SelectionChanged="comboBox_SecondWallWindow_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_SecondWallWindow_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" Text="Дверь:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="7" HorizontalAlignment="Left" x:Name="SecondWallDoor_par1" Margin="20,5" Height="20" Width="100" VerticalAlignment="Top"/>
+							<TextBox Grid.Column="3" Grid.Row="7" HorizontalAlignment="Left" x:Name="SecondWallDoor_par2" Margin="-100,5,0,5" Height="20" Width="100" VerticalAlignment="Top"/>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="7" x:Name="comboBox_SecondWallDoor" SelectionChanged="comboBox_SecondWallDoor_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_SecondWallDoor_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+						</Grid>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Третья стена" IsVisible="False">
+					<StackPanel Margin="10">
+						<Grid ColumnDefinitions="0.55*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*">
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="ThirdWallImage" Source="avares://diplomtry2/Images/третья стена.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="ThirdWallImageODR" IsVisible="False" Source="avares://diplomtry2/Images/третья стена О-Д-Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="ThirdWallImageO" IsVisible="False" Source="avares://diplomtry2/Images/третья стена О----.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="ThirdWallImageD" IsVisible="False" Source="avares://diplomtry2/Images/третья стена --Д--.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="ThirdWallImageR" IsVisible="False" Source="avares://diplomtry2/Images/третья стена ----Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="ThirdWallImageOD" IsVisible="False" Source="avares://diplomtry2/Images/третья стена О-Д--.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="ThirdWallImageOR" IsVisible="False" Source="avares://diplomtry2/Images/третья стена О---Р.png" Width="200" Height="200" Margin="70,70,0,00"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="ThirdWallImageDR" IsVisible="False" Source="avares://diplomtry2/Images/третья стена --Д-Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<TextBlock Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Left" Text="Предельный спектр:" Margin="0,5,10,5"/>
+							<ComboBox Foreground="White" Grid.Column="1"  Grid.Row="3" HorizontalAlignment="Left" Margin="0,5" x:Name="comboBox_ThirdSpeechLevel" Width="100" SelectedIndex="0" IsVisible="True">
+								<ComboBoxItem Content="ПС-20"/>
+								<ComboBoxItem Content="ПС-25"/>
+								<ComboBoxItem Content="ПС-30"/>
+								<ComboBoxItem Content="ПС-35"/>
+								<ComboBoxItem Content="ПС-40"/>
+								<ComboBoxItem Content="ПС-45"/>
+								<ComboBoxItem Content="ПС-50"/>
+								<ComboBoxItem Content="ПС-55"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Text="Длина стены, м:" Margin="0,5"/>
+							<TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" x:Name="ThirdWallLenght" Text="2" TextChanging="ThirdWallLenght_TextChanged" Margin="0,5" Width="100"/>
+							<TextBlock Grid.Column="2" Grid.Row="0"  HorizontalAlignment="Left" Text="Громкость источника звука, Дб:" Margin="-70,5,0,5"/>
+							<TextBox Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" x:Name="ThirdWallVolume" Text="50" Margin="-100,5,0,5" Width="100"/>
+							<TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Text="Высота стены, м:" Margin="0,5"/>
+							<TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" x:Name="ThirdWallHeight" Text="3" TextChanging="ThirdWallHeight_TextChanged" Margin="0,5" Width="100"/>
+							<TextBlock Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Text="Величина звукоизоляции, Дб:" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="15,45,0,0"/>
+							<TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Text="Относительная площадь:" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="-370,45,0,5"/>
+							<TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Text="" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="48,45,0,0"/>
+							<TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Text="Материал стены:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" x:Name="ThirdWallMaterial_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" x:Name="ThirdWallMaterial_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<TextBlock Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Text=""  TextAlignment="Center" Width="110" Margin="-80,55,0,0" TextWrapping="Wrap" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="4" HorizontalAlignment="Left"  x:Name="comboBox_ThirdWallMaterial" SelectionChanged="comboBox_ThirdWallMaterial_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="4" HorizontalAlignment="Left"  x:Name="comboBox_ThirdWallMaterial_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+
+							<TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Text="Смежная батаерея:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" x:Name="ThirdWallRadiator_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="5" HorizontalAlignment="Left" x:Name="ThirdWallRadiator_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_ThirdWallRadiator" SelectionChanged="comboBox_ThirdWallRadiator_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_ThirdWallRadiator_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Text="Окно:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left" x:Name="ThirdWallWindow_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="6" HorizontalAlignment="Left" x:Name="ThirdWallWindow_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="6" x:Name="comboBox_ThirdWallWindow" SelectionChanged="comboBox_ThirdWallWindow_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_ThirdWallWindow_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" Text="Дверь:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="7" HorizontalAlignment="Left" x:Name="ThirdWallDoor_par1" Margin="20,5" Height="20" Width="100" VerticalAlignment="Top"/>
+							<TextBox Grid.Column="3" Grid.Row="7" HorizontalAlignment="Left" x:Name="ThirdWallDoor_par2" Margin="-100,5,0,5" Height="20" Width="100" VerticalAlignment="Top"/>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="7" x:Name="comboBox_ThirdWallDoor" SelectionChanged="comboBox_ThirdWallDoor_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_ThirdWallDoor_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+						</Grid>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Четверта стена" IsVisible="False">
+					<StackPanel Margin="10">
+						<Grid ColumnDefinitions="0.55*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*">
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FourthWallImage" Source="avares://diplomtry2/Images/четвертая стена.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FourthWallImageODR" IsVisible="False" Source="avares://diplomtry2/Images/четвертая стена О-Д-Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FourthWallImageO" IsVisible="False" Source="avares://diplomtry2/Images/четвертая стена О----.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FourthWallImageD" IsVisible="False" Source="avares://diplomtry2/Images/четвертая стена --Д--.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FourthWallImageR" IsVisible="False" Source="avares://diplomtry2/Images/четвертая стена ----Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FourthWallImageOD" IsVisible="False" Source="avares://diplomtry2/Images/четвертая стена О-Д--.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FourthWallImageOR" IsVisible="False" Source="avares://diplomtry2/Images/четвертая стена О---Р.png" Width="200" Height="200" Margin="70,70,0,00"/>
+							<Image Grid.Column="4" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Name="FourthWallImageDR" IsVisible="False" Source="avares://diplomtry2/Images/четвертая стена --Д-Р.png" Width="200" Height="200" Margin="70,70,0,0"/>
+							<TextBlock Grid.Column="0" Grid.Row="3"  HorizontalAlignment="Left" Text="Предельный спектр:" Margin="0,5,10,5"/>
+							<ComboBox Foreground="White" Grid.Column="1"  Grid.Row="3" HorizontalAlignment="Left" Margin="0,5" x:Name="comboBox_FourthSpeechLevel" Width="100" SelectedIndex="0" IsVisible="True">
+								<ComboBoxItem Content="ПС-20"/>
+								<ComboBoxItem Content="ПС-25"/>
+								<ComboBoxItem Content="ПС-30"/>
+								<ComboBoxItem Content="ПС-35"/>
+								<ComboBoxItem Content="ПС-40"/>
+								<ComboBoxItem Content="ПС-45"/>
+								<ComboBoxItem Content="ПС-50"/>
+								<ComboBoxItem Content="ПС-55"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Text="Длина стены, м:" Margin="0,5"/>
+							<TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" x:Name="FourthWallLenght" Text="2" TextChanging="FourthWallLenght_TextChanged" Margin="0,5" Width="100"/>
+							<TextBlock Grid.Column="2" Grid.Row="0"  HorizontalAlignment="Left" Text="Громкость источника звука, Дб:" Margin="-70,5,0,5"/>
+							<TextBox Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" x:Name="FourthWallVolume" Text="50" Margin="-100,5,0,5" Width="100"/>
+							<TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Text="Высота стены, м:" Margin="0,5"/>
+							<TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" x:Name="FourthWallHeight" Text="3" TextChanging="FourthWallHeight_TextChanged" Margin="0,5" Width="100"/>
+							<TextBlock Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Text="Величина звукоизоляции, Дб:" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="15,45,0,0"/>
+							<TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" Text="Относительная площадь:" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="-370,45,0,5"/>
+							<TextBlock Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Text="" VerticalAlignment="Center" TextAlignment="Center" Width="110" TextWrapping="Wrap" Margin="48,45,0,0"/>
+							<TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Text="Материал стены:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" x:Name="FourthWallMaterial_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" x:Name="FourthWallMaterial_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<TextBlock Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Text=""  TextAlignment="Center" Width="110" Margin="-80,55,0,0" TextWrapping="Wrap" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="4" HorizontalAlignment="Left"  x:Name="comboBox_FourthWallMaterial" SelectionChanged="comboBox_FourthWallMaterial_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="4" HorizontalAlignment="Left"  x:Name="comboBox_FourthWallMaterial_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+
+							<TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Text="Смежная батаерея:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left" x:Name="FourthWallRadiator_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="5" HorizontalAlignment="Left" x:Name="FourthWallRadiator_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_FourthWallRadiator" SelectionChanged="comboBox_FourthWallRadiator_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_FourthWallRadiator_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Text="Окно:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left" x:Name="FourthWallWindow_par1" Margin="20,0" Width="100" Height="20" />
+							<TextBox Grid.Column="3" Grid.Row="6" HorizontalAlignment="Left" x:Name="FourthWallWindow_par2" Margin="-100,5,0,5" Width="100" Height="20" />
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="6" x:Name="comboBox_FourthWallWindow" SelectionChanged="comboBox_FourthWallWindow_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_FourthWallWindow_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" Text="Дверь:" Margin="0,5"/>
+							<TextBox Grid.Column="2" Grid.Row="7" HorizontalAlignment="Left" x:Name="FourthWallDoor_par1" Margin="20,5" Height="20" Width="100" VerticalAlignment="Top"/>
+							<TextBox Grid.Column="3" Grid.Row="7" HorizontalAlignment="Left" x:Name="FourthWallDoor_par2" Margin="-100,5,0,5" Height="20" Width="100" VerticalAlignment="Top"/>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="7" x:Name="comboBox_FourthWallDoor" SelectionChanged="comboBox_FourthWallDoor_Changed" Width="250" Margin="0,5" SelectedIndex="0">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+							<ComboBox Foreground="White"  Grid.Column="1"  Grid.Row="5" x:Name="comboBox_FourthWallDoor_par" Width="250" Margin="0,5" SelectedIndex="0" IsVisible="False">
+								<ComboBoxItem Content="Ошибка"/>
+							</ComboBox>
+						</Grid>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Рассчет первой стены" IsVisible="False">
+					<StackPanel>
+						<TabControl>
+							<TabItem Header="Стена">
+								<DataGrid CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding FirstWallOutput1}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Батарея">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding FirstWallOutput4}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Окно">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding FirstWallOutput3}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>							
+							<TabItem Header="Дверь">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding FirstWallOutput2}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+						</TabControl>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Рассчет второй стены" IsVisible="False">
+					<StackPanel>
+						<TabControl>
+							<TabItem Header="Стена">
+								<DataGrid CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding SecondWallOutput1}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Батарея">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding SecondWallOutput4}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Окно">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding SecondWallOutput3}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Дверь">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding SecondWallOutput2}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+						</TabControl>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Рассчет третьей стены" IsVisible="False">
+					<StackPanel>
+						<TabControl>
+							<TabItem Header="Стена">
+								<DataGrid CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding ThirdWallOutput1}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Батарея">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding ThirdWallOutput4}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Окно">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding ThirdWallOutput3}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>						
+							<TabItem Header="Дверь">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding ThirdWallOutput2}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+						</TabControl>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Рассчет четвертой стены" IsVisible="False">
+					<StackPanel>
+						<TabControl>
+							<TabItem Header="Стена">
+								<DataGrid CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding FourthWallOutput1}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Батарея">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding FourthWallOutput4}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Окно">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding FourthWallOutput3}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>
+							<TabItem Header="Дверь">
+								<DataGrid  CanUserResizeColumns="True" Height="540" GridLinesVisibility="All" CanUserSortColumns="False" ItemsSource="{Binding FourthWallOutput2}" AutoGenerateColumns="False">
+									<DataGrid.Columns>
+										<DataGridTextColumn  Header="№ Ч. полосы"
+																			Binding="{Binding Octave_Number}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fн, Гц"
+																			Binding="{Binding fn}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fв, Гц"
+																			Binding="{Binding fv}"
+																			Width="*" />
+										<DataGridTextColumn  Header="fi, Гц"
+																			Binding="{Binding fi}"
+																			Width="100" />
+										<DataGridTextColumn  Header="K(f)"
+																			Binding="{Binding Kf}"
+																			Width="*" />
+										<DataGridTextColumn  Header="∆Ai"
+																			Binding="{Binding delAi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Ls"
+																			Binding="{Binding Ls}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Lш"
+																			Binding="{Binding Lw}"
+																			Width="*" />
+										<DataGridTextColumn  Header="qi"
+																			Binding="{Binding qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="Qi"
+																			Binding="{Binding Qi}"
+																			Width="*" />
+										<DataGridTextColumn  Header="ki"
+																			Binding="{Binding ki}"
+																			Width="*" />
+										<DataGridTextColumn  Header="pi"
+																			Binding="{Binding pi}"
+																			Width="150" />
+										<DataGridTextColumn  Header="Ri"
+																			Binding="{Binding Ri}"
+																			Width="150" />
+									</DataGrid.Columns>
+								</DataGrid>
+							</TabItem>							
+						</TabControl>
+					</StackPanel>
+				</TabItem>
+				<TabItem Header="Общий рассчет" IsVisible="False">
+					<TabControl>
+						<TabItem Header="Стены">
+							<Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+								<TextBlock Grid.Column="0" Grid.Row="0" x:Name="FirstWallR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для первой стены R = " Margin="0,0,0,0"/>
+								<TextBlock Grid.Column="0" Grid.Row="1" x:Name="FirstWallSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для первой стены S(R) = " Margin="0"/>
+								<TextBlock Grid.Column="0" Grid.Row="2" x:Name="FirstWallWS" HorizontalAlignment="Left" Text="Словесная разборчивость для первой стены W(S) = " Margin="0"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="3" x:Name="FirstWallWR" HorizontalAlignment="Left" Text="Словесная разборчивость для первой стены W(R) = " Margin="0"/>-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="4" x:Name="SecondWallR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для второй стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="5" x:Name="SecondWallSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для второй стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="6" x:Name="SecondWallWS" HorizontalAlignment="Left" Text="Словесная разборчивость для второй стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="7" x:Name="SecondWallWR" HorizontalAlignment="Left" Text="Словесная разборчивость для второй стены W(R) = " Margin="0,5"/>-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="8" x:Name="ThirdWallR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для третьей стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="9" x:Name="ThirdWallSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для третьей стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="10" x:Name="ThirdWallWS" HorizontalAlignment="Left" Text="Словесная разборчивость для третьей стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="11" x:Name="ThirdWallWR" HorizontalAlignment="Left" Text="Словесная разборчивость для третьей стены W(R) = " Margin="0,5"/>-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="12" x:Name="FourthWallR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для четвертой стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="13" x:Name="FourthWallSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для четвертой стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="14" x:Name="FourthWallWS" HorizontalAlignment="Left" Text="Словесная разборчивость для четвертой стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="15" x:Name="FourthWallWR" HorizontalAlignment="Left" Text="Словесная разборчивость для четвертой стены W(R) = " Margin="0,5"/>-->
+								
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FirstWallOn" IsVisible="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FirstWallOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FirstWallOff1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FirstWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FourthWallOn" IsVisible="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FourthWallOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FourthWallOff1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FourthWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								
+								<Image Grid.Column="1" Grid.Row="16" x:Name="SecondWallOn" IsVisible="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/SecondWallOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="SecondWallOff1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/SecondWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								
+								<Image Grid.Column="1" Grid.Row="16" x:Name="ThirdWallOn" IsVisible="False" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/ThirdWallOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="ThirdWallOff1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/ThirdWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+							
+							</Grid>		
+						</TabItem>
+						<TabItem Header="Батареи">
+							<Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+								<TextBlock Grid.Column="0" Grid.Row="0" x:Name="FirstRadiatorR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для батареи первой стены R = "/>
+								<TextBlock Grid.Column="0" Grid.Row="1" x:Name="FirstRadiatorSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для батареи первой стены S(R) = " />
+								<TextBlock Grid.Column="0" Grid.Row="2" x:Name="FirstRadiatorWS" HorizontalAlignment="Left" Text="Словесная разборчивость для батареи первой стены W(S) = " />
+								<!--<TextBlock Grid.Column="0" Grid.Row="3" x:Name="FirstRadiatorWR" HorizontalAlignment="Left" Text="Словесная разборчивость для батареи первой стены W(R) = " />-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="4" x:Name="SecondRadiatorR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для батареи второй стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="5" x:Name="SecondRadiatorSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для батареи второй стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="6" x:Name="SecondRadiatorWS" HorizontalAlignment="Left" Text="Словесная разборчивость для батареи второй стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="7" x:Name="SecondRadiatorWR" HorizontalAlignment="Left" Text="Словесная разборчивость для батареи второй стены W(R) = " Margin="0,5"/>-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="8" x:Name="ThirdRadiatorR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для батареи третьей стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="9" x:Name="ThirdRadiatorSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для батареи третьей стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="10" x:Name="ThirdRadiatorWS" HorizontalAlignment="Left" Text="Словесная разборчивость для батареи третьей стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="11" x:Name="ThirdRadiatorWR" HorizontalAlignment="Left" Text="Словесная разборчивость для батареи третьей стены W(R) = " Margin="0,5"/>-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="12" x:Name="FourthRadiatorR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для батареи четвертой стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="13" x:Name="FourthRadiatorSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для батареи четвертой стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="14" x:Name="FourthRadiatorWS" HorizontalAlignment="Left" Text="Словесная разборчивость для батареи четвертой стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="15" x:Name="FourthRadiatorWR" HorizontalAlignment="Left" Text="Словесная разборчивость для батареи четвертой стены W(R) = " Margin="0,5"/>-->
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="FirstRadiatorOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FirstRadiatorOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FirstWallOff2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FirstWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="FourthRadiatorOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FourthRadiatorOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FourthWallOff2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FourthWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="SecondRadiatorOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/SecondRadiatorOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="SecondWallOff2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/SecondWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="ThirdRadiatorOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/ThirdRadiatorOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="ThirdWallOff2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/ThirdWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+							</Grid>
+						</TabItem>
+						<TabItem Header="Окна">
+							<Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+								<TextBlock Grid.Column="0" Grid.Row="0" x:Name="FirstWindowR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для окна окна первой стены R = "/>
+								<TextBlock Grid.Column="0" Grid.Row="1" x:Name="FirstWindowSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для окна первой стены S(R) = "/>
+								<TextBlock Grid.Column="0" Grid.Row="2" x:Name="FirstWindowWS" HorizontalAlignment="Left" Text="Словесная разборчивость для окна первой стены W(S) = "/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="3" x:Name="FirstWindowWR" HorizontalAlignment="Left" Text="Словесная разборчивость для окна первой стены W(R) = " />-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="4" x:Name="SecondWindowR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для окна второй стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="5" x:Name="SecondWindowSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для окна второй стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="6" x:Name="SecondWindowWS" HorizontalAlignment="Left" Text="Словесная разборчивость для окна второй стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="7" x:Name="SecondWindowWR" HorizontalAlignment="Left" Text="Словесная разборчивость для окна второй стены W(R) = " Margin="0,5"/>-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="8" x:Name="ThirdWindowR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для окна третьей стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="9" x:Name="ThirdWindowSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для окна третьей стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="10" x:Name="ThirdWindowWS" HorizontalAlignment="Left" Text="Словесная разборчивость для окна третьей стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="11" x:Name="ThirdWindowWR" HorizontalAlignment="Left" Text="Словесная разборчивость для окна третьей стены W(R) = " Margin="0,5"/>-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="12" x:Name="FourthWindowR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для окна четвертой стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="13" x:Name="FourthWindowSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для окна четвертой стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="14" x:Name="FourthWindowWS" HorizontalAlignment="Left" Text="Словесная разборчивость для окна четвертой стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="15" x:Name="FourthWindowWR" HorizontalAlignment="Left" Text="Словесная разборчивость для окна четвертой стены W(R) = " Margin="0,5"/>-->
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="FirstWindowOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FirstWindowOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FirstWallOff3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FirstWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="FourthWindowOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FourthWindowOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FourthWallOff3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FourthWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="SecondWindowOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/SecondWindowOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="SecondWallOff3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/SecondWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="ThirdWindowOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/ThirdWindowOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="ThirdWallOff3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/ThirdWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+							</Grid>
+						</TabItem>
+						<TabItem Header="Двери">
+							<Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+								<TextBlock Grid.Column="0" Grid.Row="0" x:Name="FirstDoorR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для двери первой стены R = " />
+								<TextBlock Grid.Column="0" Grid.Row="1" x:Name="FirstDoorSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для двери первой стены S(R) = " />
+								<TextBlock Grid.Column="0" Grid.Row="2" x:Name="FirstDoorWS" HorizontalAlignment="Left" Text="Словесная разборчивость для двери первой стены W(S) = " />
+								<!--<TextBlock Grid.Column="0" Grid.Row="3" x:Name="FirstDoorWR" HorizontalAlignment="Left" Text="Словесная разборчивость для двери первой стены W(R) = " />-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="4" x:Name="SecondDoorR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для двери второй стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="5" x:Name="SecondDoorSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для двери второй стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="6" x:Name="SecondDoorWS" HorizontalAlignment="Left" Text="Словесная разборчивость для двери второй стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="7" x:Name="SecondDoorWR" HorizontalAlignment="Left" Text="Словесная разборчивость для двери второй стены W(R) = " Margin="0,5"/>-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="8" x:Name="ThirdDoorR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для двери третьей стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="9" x:Name="ThirdDoorSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для двери третьей стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="10" x:Name="ThirdDoorWS" HorizontalAlignment="Left" Text="Словесная разборчивость для двери третьей стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="11" x:Name="ThirdDoorWR" HorizontalAlignment="Left" Text="Словесная разборчивость для двери третьей стены W(R) = " Margin="0,5"/>-->
+								
+								<TextBlock Grid.Column="0" Grid.Row="12" x:Name="FourthDoorR" HorizontalAlignment="Left" Text="Интегральный индекс артикуляции речи для двери четвертой стены R = " Margin="0,20,0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="13" x:Name="FourthDoorSR" HorizontalAlignment="Left" Text="Слоговая разборчивость для двери четвертой стены S(R) = " Margin="0,5"/>
+								<TextBlock Grid.Column="0" Grid.Row="14" x:Name="FourthDoorWS" HorizontalAlignment="Left" Text="Словесная разборчивость для двери четвертой стены W(S) = " Margin="0,5"/>
+								<!--<TextBlock Grid.Column="0" Grid.Row="15" x:Name="FourthDoorWR" HorizontalAlignment="Left" Text="Словесная разборчивость для двери четвертой стены W(R) = " Margin="0,5"/>-->
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="FirstDoorOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FirstDoorOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FirstWallOff4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FirstWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="FourthDoorOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FourthDoorOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="FourthWallOff4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/FourthWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="SecondDoorOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/SecondDoorOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="SecondWallOff4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/SecondWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+
+								<Image Grid.Column="1" Grid.Row="16" IsVisible="False" x:Name="ThirdDoorOn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/ThirdDoorOn.png" Width="200" Height="200" Margin="0,0,3,2"/>
+								<Image Grid.Column="1" Grid.Row="16" x:Name="ThirdWallOff4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="avares://diplomtry2/Images/ThirdWallOff.png" Width="200" Height="200" Margin="0,0,3,2"/>
+							</Grid>
+						</TabItem>						
+					</TabControl>				
+				</TabItem>
+				<TabItem Header="Помощь" IsVisible="False">
+					<StackPanel Margin="10">
+						<TextBlock Margin="10">Перед началом работу рекомендуется ознакомиться с соответствующим методическим указанием.</TextBlock>
+						<TextBlock Margin="10">Порядок расчета:</TextBlock>
+						<TextBlock Margin="10">1. Выберите с какой стеной вы хотите работать;</TextBlock>
+						<TextBlock Margin="10">2. Выберите материал стены, либо если ни один материал не вам не подходит, введите параметр звукоизоляции самостоятельно;</TextBlock>
+						<TextBlock Margin="10">3. Выберите элементы которые будут располагаться неа стене и, по необходимости, отредактируйте их  параметры;</TextBlock>
+						<TextBlock Margin="10">4. Для получения таблицы промежуточного расчета перейдите на вкладку "Расчёт стены Х", где "Х" номер стены, по которой вы хотите получить расчет;</TextBlock>
+						<TextBlock Margin="10">5. Для получения общего расчета перейдите на вкладку "Общий расчет" и выберите элемент по которому вы хотите его получить.</TextBlock>
+					</StackPanel>
+				</TabItem>
+			</TabControl>
+		</StackPanel>
+	</Grid>
+</Window>

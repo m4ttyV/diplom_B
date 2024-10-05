@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "diplomtry2", "diplomtry2\diplomtry2.csproj", "{86C328B4-57F3-414D-93D1-3F57AA6B6BD5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "diplomtry2.Desktop", "diplomtry2.Desktop\diplomtry2.Desktop.csproj", "{7246E6EF-B34F-4672-ADED-9803EC2A0EF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86C328B4-57F3-414D-93D1-3F57AA6B6BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C328B4-57F3-414D-93D1-3F57AA6B6BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C328B4-57F3-414D-93D1-3F57AA6B6BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C328B4-57F3-414D-93D1-3F57AA6B6BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7246E6EF-B34F-4672-ADED-9803EC2A0EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7246E6EF-B34F-4672-ADED-9803EC2A0EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7246E6EF-B34F-4672-ADED-9803EC2A0EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7246E6EF-B34F-4672-ADED-9803EC2A0EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7DB38E6-28E6-4F92-82C0-CAFF3F0A649E}
+	EndGlobalSection
+EndGlobal

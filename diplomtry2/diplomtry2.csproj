@@ -1,0 +1,260 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Remove="Assets\data.xam" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <None Remove="Assets\data.xam" />
+    <None Remove="Images\FirstDoorOn.png" />
+    <None Remove="Images\FirstRadiatorOn.png" />
+    <None Remove="Images\FirstWallOff.png" />
+    <None Remove="Images\FirstWallOn.png" />
+    <None Remove="Images\FirstWindowOn.png" />
+    <None Remove="Images\FourthDoorOn.png" />
+    <None Remove="Images\FourthRadiatorOn.png" />
+    <None Remove="Images\FourthWallOff.png" />
+    <None Remove="Images\FourthWallOn.png" />
+    <None Remove="Images\FourthWindowOn.png" />
+    <None Remove="Images\SecondDoorOn.png" />
+    <None Remove="Images\SecondRadiatorOn.png" />
+    <None Remove="Images\SecondWallOff.png" />
+    <None Remove="Images\SecondWallOn.png" />
+    <None Remove="Images\SecondWindowOn.png" />
+    <None Remove="Images\ThirdDoorOn.png" />
+    <None Remove="Images\ThirdRadiatorOn.png" />
+    <None Remove="Images\ThirdWallOff.png" />
+    <None Remove="Images\ThirdWallOn.png" />
+    <None Remove="Images\ThirdWindowOn.png" />
+    <None Remove="Images\вторая стена ----Р.png" />
+    <None Remove="Images\вторая стена --Д--.png" />
+    <None Remove="Images\вторая стена --Д-Р.png" />
+    <None Remove="Images\вторая стена О----.png" />
+    <None Remove="Images\вторая стена О---Р.png" />
+    <None Remove="Images\вторая стена О-Д--.png" />
+    <None Remove="Images\вторая стена О-Д-Р.png" />
+    <None Remove="Images\вторая стена.png" />
+    <None Remove="Images\первая стена ----Р.png" />
+    <None Remove="Images\первая стена --Д--.png" />
+    <None Remove="Images\первая стена --Д-Р.png" />
+    <None Remove="Images\первая стена О----.png" />
+    <None Remove="Images\первая стена О---Р.png" />
+    <None Remove="Images\первая стена О-Д--.png" />
+    <None Remove="Images\первая стена О-Д-Р.png" />
+    <None Remove="Images\первая стена.png" />
+    <None Remove="Images\стены.png" />
+    <None Remove="Images\третья стена ----Р.png" />
+    <None Remove="Images\третья стена --Д--.png" />
+    <None Remove="Images\третья стена --Д-Р.png" />
+    <None Remove="Images\третья стена О----.png" />
+    <None Remove="Images\третья стена О---Р.png" />
+    <None Remove="Images\третья стена О-Д--.png" />
+    <None Remove="Images\третья стена О-Д-Р.png" />
+    <None Remove="Images\третья стена.png" />
+    <None Remove="Images\четвертая стена ----Р.png" />
+    <None Remove="Images\четвертая стена --Д--.png" />
+    <None Remove="Images\четвертая стена --Д-Р.png" />
+    <None Remove="Images\четвертая стена О----.png" />
+    <None Remove="Images\четвертая стена О---Р.png" />
+    <None Remove="Images\четвертая стена О-Д--.png" />
+    <None Remove="Images\четвертая стена О-Д-Р.png" />
+    <None Remove="Images\четвертая стена.png" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Images\FirstDoorOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\FirstRadiatorOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\FirstWallOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\FirstWallOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\FirstWindowOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\FourthDoorOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\FourthRadiatorOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\FourthWallOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\FourthWallOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\FourthWindowOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\SecondDoorOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\SecondRadiatorOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\SecondWallOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\SecondWallOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\SecondWindowOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\ThirdDoorOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\ThirdRadiatorOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\ThirdWallOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\ThirdWallOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\ThirdWindowOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\вторая стена ----Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\вторая стена --Д--.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\вторая стена --Д-Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\вторая стена О----.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\вторая стена О---Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\вторая стена О-Д--.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\вторая стена О-Д-Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\вторая стена.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\первая стена ----Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\первая стена --Д--.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\первая стена --Д-Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\первая стена О----.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\первая стена О---Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\первая стена О-Д--.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\первая стена О-Д-Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\первая стена.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\стены.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\третья стена ----Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\третья стена --Д--.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\третья стена --Д-Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\третья стена О----.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\третья стена О---Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\третья стена О-Д--.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\третья стена О-Д-Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\третья стена.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\четвертая стена ----Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\четвертая стена --Д--.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\четвертая стена --Д-Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\четвертая стена О----.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\четвертая стена О---Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\четвертая стена О-Д--.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\четвертая стена О-Д-Р.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\четвертая стена.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.2" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\data.xam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Update="Assets\logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+  </ItemGroup>
+</Project>
